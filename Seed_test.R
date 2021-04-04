@@ -86,3 +86,18 @@ plot(density(alpha_1_burn),type="l",main="alpha_1")
 plot(density(alpha_2_burn),type="l",main="alpha_2")
 plot(density(alpha_12_burn),type="l",main="alpha_12")
 plot(density(sigma_burn),type="l",main="sigma")
+
+chain=seed(nchain,init_chain,init_bi,prop.sd, data)$chain
+chain_elag =chain[seq(1, nrow(chain), by = 40),]
+
+para = c("alpha0","alpha1","alpha2","alpha12","sigma")
+
+par(mfrow=c(2,5))
+for (i in 1:5){
+  plot(chain_elag[,i], type="l", xlab="Iterations", ylab="", main=para[i])
+}
+for (i in 1:5){
+  acf(chain_elag[,i], lag.max=100, main=para[i])
+}
+
+colMeans(chain_elag)
