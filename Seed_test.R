@@ -62,7 +62,7 @@ sd(alpha_12_burn)
 
 #sigma :
 
-sigma = sqrt(result$chain[,5])
+sigma = (result$chain[,5])
 sigma_burn = sigma[1000:10000]
 
 plot(sigma_burn,type="l")
