@@ -63,7 +63,7 @@ sd(alpha_12_burn)
 #sigma :
 
 sigma = sqrt(result$chain[,5])
-sigma_burn = sigma[1000:100000]
+sigma_burn = sigma[1000:10000]
 
 plot(sigma_burn,type="l")
 plot(density(sigma_burn),type="l")
