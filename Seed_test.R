@@ -101,3 +101,10 @@ for (i in 1:5){
 }
 
 colMeans(chain_elag)
+
+acf(alpha_0_burn, lag.max=100)
+
+    acf(alpha_1_burn, lag.max=100)
+    acf(alpha_2_burn, lag.max=100)
+    acf(alpha_12_burn, lag.max=100)
+    acf(sigma_burn, lag.max=100)
